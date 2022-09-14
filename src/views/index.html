@@ -10,10 +10,16 @@
 
 <body>
 
-  <button onclick="printToConsole({message: 'Hello world'})">Hello world</button>
+  <input type="text">
+  <button>Send</button>
 
 </body>
 <script>
+
+  const button = document.querySelector('button');
+  const input = document.querySelector('input');
+
+  button.addEventListener('click', () => { printToConsole({ message: input.value }) })
 
   function printToConsole(body) {
     fetch('/hello-world', {
